@@ -3,13 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {"start":"node index.js"},
+  "scripts": {
+    "start": "node index.js"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
+    "http": "0.0.0",
+    "node-twitter": "^0.5.3",
     "react-swipeable-views": "^0.13.0",
-    "swiper": "^4.4.6"
+    "request": "^2.88.0",
+    "swiper": "^4.4.6",
+    "url": "^0.11.0"
   }
 }

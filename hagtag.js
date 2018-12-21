@@ -1,5 +1,5 @@
 var twitterAPI = require('node-twitter-api');
-var keys =require('./secret/keys');
+var keys = require('./secret/keys');
 
 
 var twitter = new twitterAPI({
@@ -10,4 +10,5 @@ var twitter = new twitterAPI({
 
 module.exports = {
     twitter,
+    keys,
 }
