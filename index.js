@@ -14,14 +14,18 @@ app.use('/', express.static(publicPath));
 
 app.use(express.static('public'));
 
-app.get('/', function (req, res) {
+app.get('/callback', function (req, res) {
    api.twitter.search("q=%23haxmas",api.keys.apiKey,api.keys.apiKeySecret,function(err,res){
       console.log(err);
       console.log(res)
    });
-   
    res.render('index');
 });
+
+app.get('/',function(req,res){
+   res.redirect('/callback');
+});
+
 
 var server = app.listen(2018, function () {
    var host = server.address().address
