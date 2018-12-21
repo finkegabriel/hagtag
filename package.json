@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {"start":"node index.js"},
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "react-swipeable-views": "^0.13.0"
+    "express-handlebars": "^3.0.0",
+    "react-swipeable-views": "^0.13.0",
+    "swiper": "^4.4.6"
   }
 }

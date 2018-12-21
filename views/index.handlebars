@@ -1,0 +1,79 @@
+<!-- Swiper JS -->
+<script src="./swiper.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container');
+</script>
+
+<!--Swipe-->
+
+
+<h1 style="text-align:center">Use #haxmas to see your tweet up here!</h1>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+
+
+            <div class="card">
+                <section>
+                    <style>
+                        .tweet {
+                            width: 100%;
+                        }
+                    </style>
+                    <div id="tweet">
+
+                    </div>
+
+                </section>
+                <style>
+                    .bottom {
+                        position: relative;
+                        top: 280px;
+                    }
+                </style>
+                <div class="bottom">
+                    <h1>HAXMAS Alert</h1>
+                    <!--<p class="title">CEO & Founder, Example</p>-->
+                    <h1>Via: <a href="#"><i class="fa fa-twitter"></i></a></h1>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- Swiper JS -->
+<script src="../js/swiper.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container');
+</script>
+
+
+
+<script>
+
+    var element = document.getElementById('swipe');
+    window.mySwipe = Swipe(element, {
+        startSlide: 0,
+        auto: 3000,
+        autoRestart: true,
+        continuous: true,
+        disableScroll: true,
+        stopPropagation: true,
+        callback: function (index, element) { },
+        transitionEnd: function (index, element) { }
+    });
+
+</script>
+<script src="js/index.js"></script>
