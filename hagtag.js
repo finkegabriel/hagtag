@@ -7,3 +7,7 @@ var twitter = new twitterAPI({
     consumerSecret: keys.apiKeySecret,
     callback: keys.callback,
 });
+
+module.exports = {
+    twitter,
+}
