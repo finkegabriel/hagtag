@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "react-swipeable-views": "^0.13.0"
+    "express-handlebars": "^3.0.0",
+    "react-swipeable-views": "^0.13.0",
+    "swiper": "^4.4.6"
   }
 }

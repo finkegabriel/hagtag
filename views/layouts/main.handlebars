@@ -1,0 +1,213 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="../assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
+    <script id="text-template" type="text/x-handlebars-template">
+      Hello <b>{{first_name}}</b> {{last_name}}
+     </script>
+    <script src="//use.typekit.net/xyl8bgh.js"></script>
+    <script>try { Typekit.load(); } catch (e) { }</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+    <link rel='stylesheet prefetch' href='css/__codepen_io_andytran_pen.css'>
+
+    <link rel="stylesheet" href="/views/css/swiper.min.css">
+
+
+    <!-- Demo styles -->
+    <style>
+        html, body {
+      position: relative;
+      height: 100%;
+    }
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      top: -84px;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+  </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  height: 244px;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+.text {
+    display: flex;
+    position: absolute;
+    bottom: 67px;
+    right: 271px;
+}
+  </style>
+    <link rel="stylesheet" href="../css/style2.css">
+
+
+    <title>HAGTAG</title>
+
+</head>
+
+<body>
+
+    <div class="sidebar" data-color="purple" data-background-color="white">
+        <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+        <div class="logo">
+
+        </div>
+        <div class="sidebar-wrapper">
+
+        </div>
+    </div>
+    <div class="main-panel">
+        <!-- Navbar -->
+        <style>
+            /* Style The Dropdown Button */
+.dropbtn {
+    background-color: #F3EDEB;
+    color: 87817F;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    /*background-color: #3e8e41;*/
+}
+</style>
+        
+        <!-- End Navbar -->
+        <div class="content">
+            <div class="container-fluid">
+                <div id="getContent">
+
+                    <ul class="list-group">
+                    </ul>
+                </div>
+
+                {{{body}}}
+                <script src="../js/jquery.ui.touch.js"></script>
+                <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+                <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+                <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
+                <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
+                <script src="../assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+                <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+                <!-- Chartist JS -->
+                <script src="../assets/js/plugins/chartist.min.js"></script>
+                <!--  Notifications Plugin    -->
+                <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+                <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+                <script src="../assets/js/material-dashboard.min.js?v=2.1.0" type="text/javascript"></script>
+</body>
+
+</html>
