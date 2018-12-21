@@ -1,5 +1,5 @@
 var http = require('request');
-var url  = require('url');
+var url = require('url');
 var express = require('express');
 var exphbs = require('express-handlebars');
 var app = express();
@@ -15,14 +15,18 @@ app.use('/', express.static(publicPath));
 app.use(express.static('public'));
 
 app.get('/callback', function (req, res) {
-   api.twitter.search("q=%23haxmas",api.keys.apiKey,api.keys.apiKeySecret,function(err,res){
+   api.twitter.get('search/tweets', { q: 'banana since:2011-07-11', count: 100 }, function (err, data, response) {
+      console.log(err);
+      console.log(response)
+   });
+   /*api.twitter.search("q=%23haxmas",api.keys.apiKey,api.keys.apiKeySecret,function(err,res){
       console.log(err);
       console.log(res)
-   });
+   });*/
    res.render('index');
 });
 
-app.get('/',function(req,res){
+app.get('/', function (req, res) {
    res.redirect('/callback');
 });
 
