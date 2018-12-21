@@ -14,15 +14,17 @@ app.use('/', express.static(publicPath));
 
 app.use(express.static('public'));
 
-app.get('/callback', function (req, res) {
-   api.twitter.get('search/tweets', { q: 'banana since:2011-07-11', count: 100 }, function (err, data, response) {
-      console.log(err);
-      console.log(response)
+app.get('/callback', function (req, res,hagtag) {
+
+   hagtag= 'haxmas';
+   api.twitter.get('search/tweets', { q: '%23"'+hagtag+'"'}, function (err, data, response) {
+      if(err){
+         console.log("error");
+      }else{
+         let dataFunc = JSON.stringify(data.statuses);
+        console.log(dataFunc);
+      }
    });
-   /*api.twitter.search("q=%23haxmas",api.keys.apiKey,api.keys.apiKeySecret,function(err,res){
-      console.log(err);
-      console.log(res)
-   });*/
    res.render('index');
 });
 
