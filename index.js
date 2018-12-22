@@ -35,20 +35,27 @@ function searchTag(query) {
       if (err) {
          console.log("error");
       } else {
+         try {
          var twitText = data.statuses[0].text;
          console.log(twitText);
          tweets.unshift(twitText);
          /*sending data to view*/
-
+         }catch(error){
+            console.log('no tags yet bruh'); 
+         }
       }
    })
 }
 
 app.get('/', (req, res, next) => {
    setInterval(() => {
-      searchTag('hslhaxmas');
+      try {
+         searchTag('NBA');
+      } catch (error) {
+         console.log('no tags yet bruh');
+      }
    }, 30 * 1000);
-   res.render('index',{foo:tweets[0]});
+   res.render('index', { foo: tweets[0] });
 });
 
 
