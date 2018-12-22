@@ -36,12 +36,12 @@ function searchTag(query) {
          console.log("error");
       } else {
          try {
-         var twitText = data.statuses[0].text;
-         console.log(twitText);
-         tweets.unshift(twitText);
-         /*sending data to view*/
-         }catch(error){
-            console.log('no tags yet bruh'); 
+            //var tweetPic = data.statuses[0].source;
+            var twitText = data.statuses[0].text;
+            console.log(twitText);
+            tweets.unshift(twitText);
+         } catch (error) {
+            console.log('no tags yet bruh');
          }
       }
    })
@@ -50,11 +50,12 @@ function searchTag(query) {
 app.get('/', (req, res, next) => {
    setInterval(() => {
       try {
-         searchTag('NBA');
+         searchTag('hashtag');
       } catch (error) {
          console.log('no tags yet bruh');
       }
-   }, 30 * 1000);
+   }, 300 * 1000);
+   /*sending data to view*/
    res.render('index', { foo: tweets[0] });
 });
 
