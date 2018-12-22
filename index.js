@@ -10,9 +10,14 @@ const publicPath = path.join(__dirname, './hbs');
 var helpers = require('handlebars-helpers');
 var tweets = [];
 const bodyParser = require('body-parser');
+var reload = require('reload')
 
 app.engine('handlebars', exphbs({
-   defaultLayout: 'main'
+   defaultLayout: 'main'/*,
+   helpers: {
+      foo: function () { return 'FOO!'; },
+      bar: function () { return 'BAR!'; }
+   }*/
 }));
 app.set('view engine', 'handlebars');
 
@@ -20,11 +25,8 @@ app.use('/', express.static(publicPath), bodyParser.json());
 
 app.use(express.static('public'));
 
-var server = app.listen(2018, function () {
-   var host = server.address().address
-   var port = server.address().port
-
-   console.log("app listening at http://%s:%s", host, port)
+app.listen(2018, function () {
+   console.log("app listening at ..here");
 });
 
 
@@ -35,14 +37,18 @@ function searchTag(query) {
       } else {
          var twitText = data.statuses[0].text;
          console.log(twitText);
+         tweets.unshift(twitText);
          /*sending data to view*/
+
       }
    })
 }
 
 app.get('/', (req, res, next) => {
    setInterval(() => {
-      searchTag('haxmas');
-   }, 10 * 1000);
-   res.render('index');
+      searchTag('hslhaxmas');
+   }, 30 * 1000);
+   res.render('index',{foo:tweets[0]});
 });
+
+
