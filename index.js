@@ -2,40 +2,47 @@ var http = require('request');
 var url = require('url');
 var express = require('express');
 var exphbs = require('express-handlebars');
+var handlebars = require('handlebars');
 var app = express();
 var api = require('./hagtag');
 const path = require('path');
 const publicPath = path.join(__dirname, './hbs');
+var helpers = require('handlebars-helpers');
+var tweets = [];
+const bodyParser = require('body-parser');
 
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.engine('handlebars', exphbs({
+   defaultLayout: 'main'
+}));
 app.set('view engine', 'handlebars');
 
-app.use('/', express.static(publicPath));
+app.use('/', express.static(publicPath), bodyParser.json());
 
 app.use(express.static('public'));
-
-app.get('/callback', function (req, res,hagtag) {
-
-   hagtag= 'haxmas';
-   api.twitter.get('search/tweets', { q: '%23"'+hagtag+'"'}, function (err, data, response) {
-      if(err){
-         console.log("error");
-      }else{
-         let dataFunc = JSON.stringify(data.statuses);
-        console.log(dataFunc);
-      }
-   });
-   res.render('index');
-});
-
-app.get('/', function (req, res) {
-   res.redirect('/callback');
-});
-
 
 var server = app.listen(2018, function () {
    var host = server.address().address
    var port = server.address().port
 
-   console.log("Example app listening at http://%s:%s", host, port)
-});                                         
+   console.log("app listening at http://%s:%s", host, port)
+});
+
+
+function searchTag(query) {
+   api.twitter.get('search/tweets', { q: '%23"' + query + '"' }, function (err, data, response) {
+      if (err) {
+         console.log("error");
+      } else {
+         var twitText = data.statuses[0].text;
+         console.log(twitText);
+         /*sending data to view*/
+      }
+   })
+}
+
+app.get('/', (req, res, next) => {
+   setInterval(() => {
+      searchTag('haxmas');
+   }, 10 * 1000);
+   res.render('index');
+});
