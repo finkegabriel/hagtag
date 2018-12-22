@@ -19,9 +19,10 @@ app.engine('handlebars', exphbs({
       bar: function () { return 'BAR!'; }
    }*/
 }));
+app.set('views', __dirname + '/views');
 app.set('view engine', 'handlebars');
 
-app.use('/', express.static(publicPath), bodyParser.json());
+app.use('/', express.static(publicPath));
 
 app.use(express.static('public'));
 
@@ -50,7 +51,7 @@ function searchTag(query) {
 app.get('/', (req, res, next) => {
    setInterval(() => {
       try {
-         searchTag('hashtag');
+         searchTag('hslhaxmas');
       } catch (error) {
          console.log('no tags yet bruh');
       }
