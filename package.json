@@ -9,8 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
+    "handlebars-helpers": "^0.10.0",
+    "html-parse-stringify": "^1.0.3",
     "http": "0.0.0",
     "node-twitter": "^0.5.3",
     "react-swipeable-views": "^0.13.0",
